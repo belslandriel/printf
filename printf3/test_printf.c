@@ -1,0 +1,172 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <string.h>
+#include "ft_printf.h"
+
+int	main(void)
+{
+	printf(" _               _          \n");
+    	printf("| |__   __ _ ___(_) ___ ___ \n");
+    	printf("| '_ \\ / _` / __| |/ __/ __|\n");
+    	printf("| |_) | (_| \\__ \\ | (__\\__ \\\n");
+    	printf("|_.__/ \\__,_|___/_|\\___|___/\n");
+    	printf("                             \n");
+	printf("\n-----CARACTER-----\n");
+	ft_printf("ft_printf: Char test: %c\n", 'A');
+	printf("expected: %c\n", 'A');
+	printf("\n-----CADENAS-----\n");
+	ft_printf("String test: %s\n", "Hello World");
+	printf("expected: %s\n", "Hello World");
+	ft_printf("Empty string: %s\n", "");
+	printf("expected: %s\n", "");
+	ft_printf("Null string: %s\n", NULL);
+	printf("expected: %s\n", NULL);
+	printf("\n-----PUNTEROS-----\n");
+	int x = 42;
+	ft_printf("Pointer test: %p\n", &x);
+	printf("expected: %p\n", &x);
+	ft_printf("Null pointer: %p\n", NULL);
+	printf("expected: %p\n", NULL);
+	printf("\n-----NUMEROS (ENTEROS CON SIGNO 'd' e 'i'\n");
+	ft_printf("Signed int test (d): %d\n", 42);
+	printf("expected: %d\n", 42);
+	ft_printf("Signed int test (i): %i\n", -42);
+	printf("expected: %i\n", -42);
+	ft_printf("Zero int test: %d\n", 0);
+	printf("expected: %d\n", 0);
+	printf("\n-----NUMEROS SIN SIGNO (u)-----\n");
+	ft_printf("Unsigned int test: %u\n", 42);
+	printf("expected: %u\n", 42);
+	ft_printf("Unsigned int test (neg): %u\n", -42);
+	printf("expected: %u\n", -42);
+	printf("\n-----HEXADECIMALES MINUS & MAYUS-----\n");
+	ft_printf("Hexadecimal test (lowercase): %x\n", 255);
+	printf("expected: %x\n", 255);
+	ft_printf("Hexadecimal test (uppercase): %X\n", 255);
+	printf("expected: %X\n", 255);
+	printf("\n-----PORCENTAJE-----\n");
+	ft_printf("Percentage sign: %%\n");
+	printf("\n          _     _ _   _                  \n");
+    	printf("__      _(_) __| | |_| |__               \n");
+    	printf("\\ \\ /\\ / / |/ _` | __| '_ \\              \n");
+    	printf(" \\ V  V /| | (_| | |_| | | |             \n");
+    	printf("  \\_/\\_/ |_\\__,_|\\__|_| |_|             \n");
+    	printf("                                         \n");
+    	printf("  ___                                    \n");
+    	printf(" ( _ )                                   \n");
+    	printf(" / _ \\/\\                                 \n");
+    	printf("| (_>  <                                 \n");
+    	printf(" \\___/\\/                                 \n");
+    	printf("                                         \n");
+    	printf("                     _     _             \n");
+    	printf(" _ __  _ __ ___  ___(_)___(_) ___  _ __  \n");
+    	printf("| '_ \\| '__/ _ \\/ __| / __| |/ _ \\| '_ \\ \n");
+    	printf("| |_) | | |  __/ (__| \\__ \\ | (_) | | | |\n");
+    	printf("| .__/|_|  \\___|\\___|_|___/_|\\___/|_| |_|\n");
+    	printf("|_|                                       \n");
+	printf("\n-----ANCHURA MINIMA-----\n");
+	ft_printf("Width test: %5d\n", 42);
+	printf("expected: %5d\n", 42);
+	ft_printf("Width test: %5s\n", "Hi");
+	printf("expected: %5s\n", "Hi");
+	printf("-----PRECISION-----\n");
+	ft_printf("Precision test (int): %.5d\n", 42);
+	printf("expected: %.5d\n", 42);
+	ft_printf("Precision test (string): %.3s\n", "Hello");
+	printf("expected: %.3s\n", "Hello");
+	printf("-----ANCHURA Y PRECISION-----\n");
+	ft_printf("Width and precision test: %10.3d\n", 42);
+	printf("expected: %10.3d\n");
+	printf("\n   __ _           _ _                                \n");
+    	printf("  / /(_)_ __ ___ (_) |_ ___                          \n");
+    	printf(" / / | | '_ ` _ \\| | __/ __|                         \n");
+    	printf("/ /__| | | | | | | | |\\__ \\                         \n");
+    	printf("\\____/_|_| |_| |_|_|\\__|___/                         \n");
+    	printf("                                                      \n");
+    	printf("  ___                                                \n");
+    	printf(" ( _ )                                               \n");
+    	//printf(" / _ \\/\\                                             \n");
+    	printf("| (_>  <                                             \n");
+    	printf(" \\___/\\/                                             \n");
+    	printf("                                                      \n");
+    	printf("                                       _           _ \n");
+    	printf(" /\\ /\\ _ __   _____  ___ __   ___  ___| |_ ___  __| |\n");
+    	printf("/ / \\ \\ '_ \\ / _ \\ \\/ / '_ \\ / _ \\/ __| __/ _ \\/ _` |\n");
+    	printf("\\ \\_/ / | | |  __/>  <| |_) |  __/ (__| ||  __/ (_| |\n");
+    	printf(" \\___/|_| |_|\\___/_/\\_\\ .__/ \\___|\\___|\\__\\___|\\__,_|\n");
+    	printf("                      |_|                             \n");
+	printf("\n-----INT MAX, MIN y UINT MAX-----\n");
+	ft_printf("Max int: %d\n", INT_MAX);
+	printf("expected: %d\n", INT_MAX);
+	ft_printf("Min int: %d\n", INT_MIN);
+	printf("expected: %d\n", INT_MIN);
+	ft_printf("Test UINT_MAX: %u\n", UINT_MAX);
+	printf("expected: %u\n", UINT_MAX);
+	printf("-----FORMATO INCORRECTO O INCOMPLETO-----\n");
+	ft_printf("Incomplete format: %\n");
+	printf("expected: %\n");
+	ft_printf("Invalid format: %y\n", 42);
+	printf("expected: %y\n", 42);
+	printf("Nothing passed: ");
+	ft_printf("");
+	printf("\n");
+	printf("expected: ");
+	printf("");
+	printf("\n");
+	printf("-----CADENA MUY LARGA-----\n");
+	char large_string[10000];
+	memset(large_string, 'A', 9999);
+	large_string[9999] = '\0';
+	ft_printf("Large string test: %s\n", large_string);
+	printf("-----SUBDESBORDAMIENTO-----\n");
+	ft_printf("Negative test (unsigned): %u\n", -1);
+	printf("expected: %u\n", -1);
+	printf("-----COMBINACIONES COMPLEJAS-----\n");
+	ft_printf("Combined test: %c %s %d %x %p\n", 'A', "Test", 42, 255, NULL);
+	printf("expected: %c %s %d %x %p\n", 'A', "Test", 42, 255, NULL);
+	printf("-----EXTREMO DE FLAGS Y MODIICADORES-----\n");
+	ft_printf("Left aligned: %-10d end\n", 42);
+	printf("expected: %-10d end\n", 42);
+	ft_printf("Zero padded: %05d\n", 42);
+	printf("expected: %05d\n", 42);
+	printf("-----CARACTERES NO PRINTABLES-----\n");
+	char non_printable[4] = {0, 1, 2, 3};
+	ft_printf("Non-printable characters: %s\n", non_printable);
+	printf("expected: %s\n", non_printable);
+
+	printf("\n          _                        \n");
+    	printf(" _ __ ___| |_ _   _ _ __ _ __  ___ \n");
+    	printf("| '__/ _ \\ __| | | | '__| '_ \\/ __|\n");
+    	printf("| | |  __/ |_| |_| | |  | | | \\__ \\ \n");
+    	printf("|_|  \\___|\\__|\\__,_|_|  |_| |_|___/ \n");
+	printf("\n-----RETORNO DE CADENA SIMPLE-----\n");
+	int ret = ft_printf("Return test: %s\n", "Hello");
+	printf("Expected return: %d, Actual return: %d\n", (int)strlen("Return test: Hello\n"), ret);
+	printf("-----RETORNO DE CARACTER\n");
+	int ret1 = ft_printf("Char return test: %c\n", 'A');
+	printf("Expected return: %d, Actual return: %d\n", 20, ret1);
+	printf("-----RETORNO DE NUMERO ENTERO-----\n");
+	int ret2 = ft_printf("Integer return test: %d\n", 123);
+	printf("Expected return: %d, Actual return: %d\n", (int)strlen("Integer return test: 123\n"), ret2);
+	printf("-----RETORNO CON PUNTERO-----\n");
+	int x2 = 42;
+	int ret3 = ft_printf("Pointer return test: %p\n", &x2);
+	printf("Expected return: %d, Actual return: %d\n", (int)strlen("Pointer return test: 0x7ffd360558cc\n"), ret3);
+	printf("-----RETORNO DE MULTIPLES ESPECIFICADORES-----\n");
+	int ret4 = ft_printf("Combined return test: %c %s %d\n", 'B', "Test", 100);
+	printf("Expected return: %d, Actual return: %d\n", (int)strlen("Combined return test: B Test 100\n"), ret4);
+	
+
+/*
+	printf("\n   ___           __                                            \n");
+    	printf("  / _ \\___ _ __ / _| ___  _ __ _ __ ___   __ _ _ __   ___ ___ \n");
+    	printf(" / /_)/ _ \\ '__| |_ / _ \\| '__| '_ ` _ \\ / _` | '_ \\ / __/ _ \\\n");
+    	printf("/ ___/  __/ |  |  _| (_) | |  | | | | | | (_| | | | | (_|  __/\n");
+    	printf("\\/    \\___|_|  |_|  \\___/|_|  |_| |_| |_|\\__,_|_| |_|\\___\\___|\n");
+	for (int i = 0; i < 100000; i++)
+    		ft_printf("Performance test: %d\n", i);
+*/
+
+	return (0);
+}
